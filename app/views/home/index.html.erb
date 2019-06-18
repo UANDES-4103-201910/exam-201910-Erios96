@@ -1,2 +1,53 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+
+<% @product.each do |post| %>
+  <div class="col" id="StylePost">
+    <div class="row">
+      <div class="col-md-1">
+        <label> Model:</label>
+      </div>
+      <div class="col">
+        <%= post.model %>
+      </div>
+
+    </div>
+    <div class="row">
+      <% if post.variant.nil? %>
+      <%else %>
+      <div class="col-md-1">
+        <label> Variant:</label>
+      </div>
+      <div class = "col">
+        <%= post.variant %>
+      </div>
+      <%end %>
+      <div class="col-md-1">
+        <label> Price:</label>
+      </div>
+      <div class="col text-right">
+        <%= post.price %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label> Short Description:</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <%= post.short_description %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label> Long Description:</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <%= post.long_description%>
+      </div>
+    </div>
+
+  </div>
+  <br>
+<% end %>
